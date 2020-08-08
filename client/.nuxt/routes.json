@@ -1,0 +1,37 @@
+[
+  {
+    "name": "medico",
+    "path": "/medico",
+    "component": "/home/gustavo/projetos/dropill/client/pages/medico/index.vue",
+    "chunkName": "pages/medico/index",
+    "_name": "_98c49d8c"
+  },
+  {
+    "name": "responsavel",
+    "path": "/responsavel",
+    "component": "/home/gustavo/projetos/dropill/client/pages/responsavel.vue",
+    "chunkName": "pages/responsavel",
+    "_name": "_55bc2202"
+  },
+  {
+    "name": "sobre",
+    "path": "/sobre",
+    "component": "/home/gustavo/projetos/dropill/client/pages/sobre.vue",
+    "chunkName": "pages/sobre",
+    "_name": "_1d0cb8fb"
+  },
+  {
+    "name": "medico-receita",
+    "path": "/medico/receita",
+    "component": "/home/gustavo/projetos/dropill/client/pages/medico/receita.vue",
+    "chunkName": "pages/medico/receita",
+    "_name": "_9e55f0ee"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/gustavo/projetos/dropill/client/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_3f286b14"
+  }
+]
