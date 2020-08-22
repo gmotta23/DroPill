@@ -1,0 +1,10 @@
+.env
+node_modules
+build
+client/node_modules
+client/.nuxt
+client/dist
+client/.env
+server/node_modules
+server/build
+server/.env
