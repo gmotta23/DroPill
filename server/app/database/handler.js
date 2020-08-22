@@ -15,7 +15,6 @@ export default {
 
       fs.writeFile('app/database/data.json', json, (err) => {
         if (err) return console.log(err)
-        console.log('sucesso!')
       })
 
     } catch (error) {

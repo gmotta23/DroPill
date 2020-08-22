@@ -9,16 +9,26 @@ router.get('/', (req, res) => {
 })
 
 router.post('/receita/nova', (req, res) => {
-  console.log(req.body)
-  
-  res.send('Receita ok!')
+  try {
+    let new_receita = req.body
+    let database = handler.getDatabase()
+
+    database.receita.push(new_receita)
+
+    handler.saveDatabase(database)
+
+    res.status(200).json({
+      message: 'Receita criada com sucesso!'
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(400)
+  }
 })
 
 router.get('/json', (req, res) => {
 
   let data = handler.getDatabase()
-
-  console.log(data)
 
   res.send(data)
 })

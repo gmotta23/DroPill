@@ -4,5 +4,17 @@
   },
   "LazyHeader": {
     "description": "Auto imported from components/Header.vue"
+  },
+  "Gallery": {
+    "description": "Auto imported from components/Farmacia/Receitas/Gallery.vue"
+  },
+  "LazyGallery": {
+    "description": "Auto imported from components/Farmacia/Receitas/Gallery.vue"
+  },
+  "Single": {
+    "description": "Auto imported from components/Farmacia/Receitas/Single.vue"
+  },
+  "LazySingle": {
+    "description": "Auto imported from components/Farmacia/Receitas/Single.vue"
   }
 }

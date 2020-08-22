@@ -80,9 +80,7 @@ Modelo inicial:
       "id": 2
     }
   ],
-  "receita": [
-
-  ],
+  "receita": [],
   "farmacia": [
     {
       "nome": "farmacia_exemplo",

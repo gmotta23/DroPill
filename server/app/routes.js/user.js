@@ -16,12 +16,10 @@ router.post('/cadastro', (req, res) => {
 
 router.post('/login', (req, res) => {
   
-  // Como é apenas para simulação, procurar na string email o que o usuário é
   let response
   let {email, senha} = req.body
 
   try {
-    console.log('oi!')
 
     let type
     
@@ -38,7 +36,6 @@ router.post('/login', (req, res) => {
 
     login_array.forEach(user => {
       if (user.email === email && user.senha === senha) {
-        console.log('sucesso!')
         response = {
           message: 'Sucesso',
           id: user.id,
@@ -48,10 +45,6 @@ router.post('/login', (req, res) => {
         }
       }
     });
-
-    console.log(login_array)
-
-    // checar se senha está correta para
 
   } catch (error) {
     console.log(error)

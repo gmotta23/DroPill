@@ -1,3 +1,7 @@
 export { default as Header } from '../../components/Header.vue'
+export { default as Gallery } from '../../components/Farmacia/Receitas/Gallery.vue'
+export { default as Single } from '../../components/Farmacia/Receitas/Single.vue'
 
 export const LazyHeader = import('../../components/Header.vue' /* webpackChunkName: "components/Header" */).then(c => c.default || c)
+export const LazyGallery = import('../../components/Farmacia/Receitas/Gallery.vue' /* webpackChunkName: "components/Farmacia/Receitas/Gallery" */).then(c => c.default || c)
+export const LazySingle = import('../../components/Farmacia/Receitas/Single.vue' /* webpackChunkName: "components/Farmacia/Receitas/Single" */).then(c => c.default || c)

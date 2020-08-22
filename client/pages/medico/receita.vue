@@ -5,7 +5,7 @@
       <h1 class="title-container">
         Receita
       </h1>
-      <h2>Crie aqui sua receita</h2>
+      <h2 class="title-container">Crie aqui sua receita</h2>
       <form action="" class="form">
         <div class="forms-container">
           <div class="input-container">
@@ -87,7 +87,6 @@ export default {
 
       this.pacientes = data
 
-      console.log(data)
     } catch (error) {
       
     }
@@ -97,14 +96,22 @@ export default {
     Header
   },
   methods: {
-    novaReceita () {
-      let isValid = true
-      Object.values(this.receita).every((value, index) => {
-        if (!value) return isValid = false
-      })
+    async novaReceita () {
 
-      if (!isValid) return alert('Preencha os campos corretamente.')
-      console.log(this.receita)
+      try {
+        if (Object.values(this.receita).indexOf(undefined) != -1) return alert('Preencha os campos corretamente.')
+
+        let response = await axios({
+          method: 'post',
+          url: `${process.env.SERVER_URL}/medico/receita/nova`,
+          data: this.receita
+        })
+
+        console.log(response)
+      } catch (error) {
+        
+      }
+
     }
   }
 }
@@ -121,13 +128,16 @@ export default {
 .page-content {
   padding-top: 4rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 4rem 5rem 0 5rem;
   flex-flow: column;
 }
 
 .title-container {
-  margin-top: 2rem;
+  // margin-top: 2rem;
+  text-align: left;
+  width: 80%;
+  padding: .5rem 1rem;
   // padding: 1rem;
   // text-align: center;
 }

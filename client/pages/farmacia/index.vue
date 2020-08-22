@@ -2,7 +2,8 @@
   <div class="container">
     <Header />
     <div class="page-content">
-      Farmácia
+      <h1>Bem vindo! Farmácia {{nome}}</h1>
+      <Receitas :receitas="receitas" />
     </div>
   </div>
 </template>
@@ -10,20 +11,50 @@
 <script>
 
 import Header from '@/components/Header.vue'
+import Receitas from '@/components/Farmacia/Receitas/Gallery'
+import cookies from '@/mixins/cookies'
+
+import axios from 'axios'
 
 export default {
   components: {
-    Header
-  }
+    Header,
+    Receitas
+  },
+  async asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+    try {
+
+      let cookie = cookies.getCookie('login_dropill')
+      console.log(cookie)
+
+      let nome = JSON.parse(cookie).nome
+
+      console.log(nome)
+
+      let {data} = await axios({
+        method: 'get',
+        url: `${process.env.SERVER_URL}/farmacia/receitas`
+      })
+
+      return {
+        receitas: data,
+        nome: nome
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
-  min-height: 100vh;
-}
 
 .page-content {
   padding-top: 4rem;
+}
+
+h1 {
+  padding: 1rem;
 }
 </style>
