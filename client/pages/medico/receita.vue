@@ -5,6 +5,56 @@
       <h1 class="title-container">
         Receita
       </h1>
+      <h2>Crie aqui sua receita</h2>
+      <form action="" class="form">
+        <div class="forms-container">
+          <div class="input-container">
+            <label for="paciente">
+              Nome do paciente + ID
+            </label>
+            <select name="paciente" id="paciente" v-model="receita.paciente_id">
+              <option :value="paciente.id" v-for="paciente in pacientes" :key="paciente.id">
+                ID: {{paciente.id}} - {{paciente.nome}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="forms-container">
+          <div class="input-container">
+            <label for="nome_remedio">
+              Nome do remédio
+            </label>
+            <input type="text" name="nome_remedio" v-model="receita.remedio_nome">
+          </div>
+        </div>
+        <div class="forms-container">
+          <div class="input-container">
+            <label for="remedio_dosagem">
+              Dosagem do remédio
+            </label>
+            <input type="text" name="remedio_dosagem" v-model="receita.remedio_dosagem">
+          </div>
+        </div>      
+        <div class="forms-container">
+          <div class="input-container">
+            <label for="remedio_horario">
+              Horário para tomar
+            </label>
+            <input type="text" name="remedio_horario" v-model="receita.remedio_horario">
+          </div>
+        </div>
+        <div class="forms-container">
+          <div class="input-container">
+            <label for="dias">
+              Por quantos dias
+            </label>
+            <input type="number" timezone="" name="dias" v-model="receita.dias">
+          </div>
+        </div>
+        <div class="button" @click.prevent="novaReceita(receita)">
+          Gerar receita
+        </div>         
+      </form>         
     </div>
   </div>
 </template>
@@ -17,14 +67,45 @@ import axios from 'axios'
 export default {
   data () {
     return {
-
+      pacientes: [],
+      receita: {
+        paciente_id: undefined,
+        remedio_nome: undefined,
+        remedio_dosagem: undefined,
+        remedio_horario: undefined,
+        dias: undefined
+      }
     }
+  },
+  async beforeMount() {
+    try {
+
+      let {data} = await axios({
+        method: 'get',
+        url: `${process.env.SERVER_URL}/paciente/getAll`
+      })
+
+      this.pacientes = data
+
+      console.log(data)
+    } catch (error) {
+      
+    }
+
   },
   components: {
     Header
   },
   methods: {
+    novaReceita () {
+      let isValid = true
+      Object.values(this.receita).every((value, index) => {
+        if (!value) return isValid = false
+      })
 
+      if (!isValid) return alert('Preencha os campos corretamente.')
+      console.log(this.receita)
+    }
   }
 }
 </script>
@@ -40,17 +121,33 @@ export default {
 .page-content {
   padding-top: 4rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  padding: 4rem 5rem 0 5rem;
   flex-flow: column;
 }
 
 .title-container {
-  width: 25vw;
   margin-top: 2rem;
-  padding: 1rem;
+  // padding: 1rem;
   // text-align: center;
 }
 
+form {
+  width: 80%;
+  padding: 1rem;
+}
 
+.forms-container {
+  width: 100%;
+  // padding: 1rem;
+  .input-container {
+    display: grid;
+    margin: 1rem 0;
+  }
+}
+
+.button {
+  @include mixin-button;
+}
 
 </style>

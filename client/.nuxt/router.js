@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _2cfb77a1 = () => interopDefault(import('../pages/farmacia/index.vue' /* webpackChunkName: "pages/farmacia/index" */))
 const _98c49d8c = () => interopDefault(import('../pages/medico/index.vue' /* webpackChunkName: "pages/medico/index" */))
 const _55bc2202 = () => interopDefault(import('../pages/responsavel.vue' /* webpackChunkName: "pages/responsavel" */))
 const _1d0cb8fb = () => interopDefault(import('../pages/sobre.vue' /* webpackChunkName: "pages/sobre" */))
@@ -26,6 +27,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/farmacia",
+    component: _2cfb77a1,
+    name: "farmacia"
+  }, {
     path: "/medico",
     component: _98c49d8c,
     name: "medico"

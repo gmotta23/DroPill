@@ -50,10 +50,9 @@ export default {
 }
 
 .title-container {
-  width: 25vw;
+  width: auto;
   margin-top: 2rem;
   padding: 1rem;
-  // text-align: center;
 }
 
 .button {

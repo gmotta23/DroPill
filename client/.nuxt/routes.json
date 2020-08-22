@@ -1,5 +1,12 @@
 [
   {
+    "name": "farmacia",
+    "path": "/farmacia",
+    "component": "/home/gustavo/projetos/dropill/client/pages/farmacia/index.vue",
+    "chunkName": "pages/farmacia/index",
+    "_name": "_2cfb77a1"
+  },
+  {
     "name": "medico",
     "path": "/medico",
     "component": "/home/gustavo/projetos/dropill/client/pages/medico/index.vue",

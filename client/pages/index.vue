@@ -28,7 +28,9 @@
 </template>
 
 <script>
+
 import Header from '@/components/Header.vue'
+import cookies from '@/mixins/cookies'
 
 import axios from 'axios'
 
@@ -36,8 +38,8 @@ export default {
   data () {
     return {
       form: {
-        email: '',
-        senha: ''
+        email: 'medico_2@dropill.com',
+        senha: 'medico1234'
       }
     }
   },
@@ -49,13 +51,15 @@ export default {
       try {
         let {data} = await axios({
           method: 'post',
-          url: 'http://localhost:3000/login',
+          url: `${process.env.SERVER_URL}/user/login`,
           data: form
         })
 
         if (data) {
           console.log(data)
-          this.$router.push(`/${data.data}`)
+          cookies.setCookie('login_dropill', data.data)
+          // salvar como cookie os dados do login
+          this.$router.push(`/${data.data.tipo}`)
         }
 
       } catch (error) {
