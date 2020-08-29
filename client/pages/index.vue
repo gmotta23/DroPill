@@ -56,7 +56,6 @@ export default {
         })
 
         if (data) {
-          console.log(data)
           cookies.setCookie('login_dropill', data.data)
           // salvar como cookie os dados do login
           this.$router.push(`/${data.data.tipo}`)
@@ -84,6 +83,10 @@ export default {
   display: flex;
   align-items: center;
   flex-flow: column;
+  background: url('/img/dp-tech.png');
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 50% 40%;
 }
 
 .title-container {

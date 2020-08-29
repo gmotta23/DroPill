@@ -26,4 +26,26 @@ router.get('/receitas', (req, res) => {
   }
 })
 
+router.post('/newDrop', (req, res) => {
+  try {
+
+    let new_drop = req.body
+
+    let database = handler.getDatabase()
+
+    database.receita.map(receita => {
+      if (receita.uuid === new_drop.uuid) {
+        receita.inserted = true
+      }
+    })
+
+    handler.saveDatabase(database)
+    
+    res.status(200).send('ok')
+
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 module.exports = router

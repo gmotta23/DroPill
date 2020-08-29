@@ -28,6 +28,13 @@
     "_name": "_1d0cb8fb"
   },
   {
+    "name": "medico-dropill",
+    "path": "/medico/dropill",
+    "component": "/home/gustavo/projetos/dropill/client/pages/medico/dropill.vue",
+    "chunkName": "pages/medico/dropill",
+    "_name": "_50e45ec2"
+  },
+  {
     "name": "medico-receita",
     "path": "/medico/receita",
     "component": "/home/gustavo/projetos/dropill/client/pages/medico/receita.vue",

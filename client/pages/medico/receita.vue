@@ -51,10 +51,24 @@
             <input type="number" timezone="" name="dias" v-model="receita.dias">
           </div>
         </div>
+        <div class="forms-container">
+          <div class="input-container">
+            <label for="reserv">
+              Qual reservatório da DroPill
+            </label>
+            <select name="reserv" id="reserv" v-model="receita.dropill_reserv">
+              <option :value="reserv" v-for="reserv in 5" :key="reserv">
+                Reservatório {{reserv}}
+              </option>
+            </select>
+          </div>
+        </div>        
         <div class="button" @click.prevent="novaReceita(receita)">
           Gerar receita
         </div>         
-      </form>         
+      </form>
+      <div class="imagem">
+      </div> 
     </div>
   </div>
 </template>
@@ -73,7 +87,8 @@ export default {
         remedio_nome: undefined,
         remedio_dosagem: undefined,
         remedio_horario: undefined,
-        dias: undefined
+        dias: undefined,
+        dropill_reserv: undefined
       }
     }
   },
@@ -107,7 +122,6 @@ export default {
           data: this.receita
         })
 
-        console.log(response)
       } catch (error) {
         
       }
@@ -158,6 +172,14 @@ form {
 
 .button {
   @include mixin-button;
+}
+
+.imagem {
+  width: 100vw;
+  height: 20rem;
+  background: url('/img/dp-tech.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 </style>

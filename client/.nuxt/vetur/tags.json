@@ -16,5 +16,17 @@
   },
   "LazySingle": {
     "description": "Auto imported from components/Farmacia/Receitas/Single.vue"
+  },
+  "MedicoGallery": {
+    "description": "Auto imported from components/Medico/Receitas/MedicoGallery.vue"
+  },
+  "LazyMedicoGallery": {
+    "description": "Auto imported from components/Medico/Receitas/MedicoGallery.vue"
+  },
+  "MedicoSingle": {
+    "description": "Auto imported from components/Medico/Receitas/MedicoSingle.vue"
+  },
+  "LazyMedicoSingle": {
+    "description": "Auto imported from components/Medico/Receitas/MedicoSingle.vue"
   }
 }

@@ -9,6 +9,9 @@
         <nuxt-link to="/medico/receita" class="button">
           Gerar nova receita
         </nuxt-link>
+        <nuxt-link to="/medico/dropill" class="button">
+          Ver DroPills
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -57,6 +60,14 @@ export default {
 
 .button {
   @include mixin-button;
+}
+
+.control-panel {
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+  width: 40rem;
+  justify-content: space-between;
 }
 
 </style>

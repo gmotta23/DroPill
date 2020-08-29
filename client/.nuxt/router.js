@@ -7,6 +7,7 @@ const _2cfb77a1 = () => interopDefault(import('../pages/farmacia/index.vue' /* w
 const _98c49d8c = () => interopDefault(import('../pages/medico/index.vue' /* webpackChunkName: "pages/medico/index" */))
 const _55bc2202 = () => interopDefault(import('../pages/responsavel.vue' /* webpackChunkName: "pages/responsavel" */))
 const _1d0cb8fb = () => interopDefault(import('../pages/sobre.vue' /* webpackChunkName: "pages/sobre" */))
+const _50e45ec2 = () => interopDefault(import('../pages/medico/dropill.vue' /* webpackChunkName: "pages/medico/dropill" */))
 const _9e55f0ee = () => interopDefault(import('../pages/medico/receita.vue' /* webpackChunkName: "pages/medico/receita" */))
 const _3f286b14 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -42,6 +43,10 @@ export const routerOptions = {
     path: "/sobre",
     component: _1d0cb8fb,
     name: "sobre"
+  }, {
+    path: "/medico/dropill",
+    component: _50e45ec2,
+    name: "medico-dropill"
   }, {
     path: "/medico/receita",
     component: _9e55f0ee,

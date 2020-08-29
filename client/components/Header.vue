@@ -1,15 +1,13 @@
 <template>
   <header class="header">
-    <div class="logo-container">
-      <nuxt-link to="/" class="logo">
-        Logo DroPill
-      </nuxt-link>
-    </div>
+    <nuxt-link to="/" class="logo-container">
+
+    </nuxt-link>
     <div class="buttons-container">
       <nuxt-link to="/sobre" class="button">
         Sobre
       </nuxt-link>
-      <div class="button" @click.prevent="handleLogout()">
+      <div v-if="nome" class="button" @click.prevent="handleLogout()">
         Sair
       </div>      
     </div>
@@ -21,6 +19,17 @@
 import cookies from '@/mixins/cookies'
 
 export default {
+  data () {
+    let cookie = cookies.getCookie('login_dropill')
+    let nome
+    if (cookie) {
+      nome = JSON.parse(cookie).nome
+    }
+
+    return {
+      nome: nome
+    }
+  },
   methods: {
     handleLogout() {
       try {
@@ -49,6 +58,15 @@ export default {
   padding: 0 1rem;
   height: 4rem;
   color: white;
+}
+
+.logo-container {
+  background: url('/img/logotipo.png');
+  height: 90%;
+  padding: 1rem;
+  width: 5rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .buttons-container {

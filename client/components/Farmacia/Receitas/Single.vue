@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" v-if="!receita.inserted">
     <div class="titulo">
       Receita
     </div>
@@ -18,8 +18,14 @@
     <div class="paciente-id text">
       ID do paciente: {{receita.paciente_id}}
     </div>
+    <div class="paciente-id text">
+      Reservatório da DroPill: {{receita.dropill_reserv}}
+    </div>
+    <div class="paciente-id text">
+      ID: {{receita.uuid}}
+    </div>
     <div class="gerar-dropill">
-      <div class="button">
+      <div class="button" @click.prevent="gerarDroPill">
         Gerar DroPill!
       </div>
     </div>
@@ -28,9 +34,28 @@
 
 <script>
 
+import axios from 'axios'
+
 export default {
   props: {
     receita: {required: true}
+  },
+  methods: {
+    async gerarDroPill () {
+      try {
+        
+        let response = await axios({
+          method: 'post',
+          url: `${process.env.SERVER_URL}/farmacia/newDrop`,
+          data: this.receita
+        })
+
+        this.receita.inserted = true
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
   }
 }
 </script>
