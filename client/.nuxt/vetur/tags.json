@@ -5,6 +5,12 @@
   "LazyHeader": {
     "description": "Auto imported from components/Header.vue"
   },
+  "DropillCard": {
+    "description": "Auto imported from components/Responsavel/DropillCard.vue"
+  },
+  "LazyDropillCard": {
+    "description": "Auto imported from components/Responsavel/DropillCard.vue"
+  },
   "Gallery": {
     "description": "Auto imported from components/Farmacia/Receitas/Gallery.vue"
   },

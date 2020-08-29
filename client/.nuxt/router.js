@@ -5,10 +5,11 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _2cfb77a1 = () => interopDefault(import('../pages/farmacia/index.vue' /* webpackChunkName: "pages/farmacia/index" */))
 const _98c49d8c = () => interopDefault(import('../pages/medico/index.vue' /* webpackChunkName: "pages/medico/index" */))
-const _55bc2202 = () => interopDefault(import('../pages/responsavel.vue' /* webpackChunkName: "pages/responsavel" */))
+const _2a339f05 = () => interopDefault(import('../pages/responsavel/index.vue' /* webpackChunkName: "pages/responsavel/index" */))
 const _1d0cb8fb = () => interopDefault(import('../pages/sobre.vue' /* webpackChunkName: "pages/sobre" */))
 const _50e45ec2 = () => interopDefault(import('../pages/medico/dropill.vue' /* webpackChunkName: "pages/medico/dropill" */))
 const _9e55f0ee = () => interopDefault(import('../pages/medico/receita.vue' /* webpackChunkName: "pages/medico/receita" */))
+const _000b104e = () => interopDefault(import('../pages/responsavel/recarga.vue' /* webpackChunkName: "pages/responsavel/recarga" */))
 const _3f286b14 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -37,7 +38,7 @@ export const routerOptions = {
     name: "medico"
   }, {
     path: "/responsavel",
-    component: _55bc2202,
+    component: _2a339f05,
     name: "responsavel"
   }, {
     path: "/sobre",
@@ -51,6 +52,10 @@ export const routerOptions = {
     path: "/medico/receita",
     component: _9e55f0ee,
     name: "medico-receita"
+  }, {
+    path: "/responsavel/recarga",
+    component: _000b104e,
+    name: "responsavel-recarga"
   }, {
     path: "/",
     component: _3f286b14,

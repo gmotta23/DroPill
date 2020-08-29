@@ -3,7 +3,11 @@
     <Header />
     <div class="page-content">
       <h1>Bem vindo! Médico {{nome}}</h1>
+      <nuxt-link to="/medico/receita" class="button">
+        Nova receita
+      </nuxt-link>
       <Dropills :dropills="dropills" />
+   
     </div>
   </div>
 </template>
@@ -47,11 +51,19 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '@/assets/scss/index.scss';
+
 .page-content {
   padding-top: 4rem;
 }
 
 h1 {
   padding: 1rem;
+}
+
+.button {
+  @include mixin-button;
+  width: 10rem;
+  margin-left: 1rem;
 }
 </style>

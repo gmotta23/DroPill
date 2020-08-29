@@ -34,7 +34,7 @@ export default {
       })
 
       return {
-        receitas: data,
+        receitas: data.reverse(),
         nome: nome
       }
 

@@ -16,9 +16,9 @@
   {
     "name": "responsavel",
     "path": "/responsavel",
-    "component": "/home/gustavo/projetos/dropill/client/pages/responsavel.vue",
-    "chunkName": "pages/responsavel",
-    "_name": "_55bc2202"
+    "component": "/home/gustavo/projetos/dropill/client/pages/responsavel/index.vue",
+    "chunkName": "pages/responsavel/index",
+    "_name": "_2a339f05"
   },
   {
     "name": "sobre",
@@ -40,6 +40,13 @@
     "component": "/home/gustavo/projetos/dropill/client/pages/medico/receita.vue",
     "chunkName": "pages/medico/receita",
     "_name": "_9e55f0ee"
+  },
+  {
+    "name": "responsavel-recarga",
+    "path": "/responsavel/recarga",
+    "component": "/home/gustavo/projetos/dropill/client/pages/responsavel/recarga.vue",
+    "chunkName": "pages/responsavel/recarga",
+    "_name": "_000b104e"
   },
   {
     "name": "index",

@@ -56,14 +56,14 @@ Modelo inicial:
       "id": 1,
       "email": "paciente_1@dropill.com",
       "senha": "paciente1234",
-      "responsaveis_id": [1, 2]
+      "responsavel_id": 1
     },
     {
       "nome": "Maria",
       "id": 2,
       "email": "paciente_2@dropill.com",
       "senha": "paciente1234",
-      "responsaveis_id": [2]
+      "responsavel_id": 2
     }
   ],
   "medico": [
@@ -95,14 +95,14 @@ Modelo inicial:
       "email": "responsavel_1@dropill.com",
       "senha": "responsavel1234",
       "id": "1",
-      "pacientes_id": [1]
+      "paciente_id": 1
     },
     {
       "nome": "Responsável_2",
       "email": "responsavel_2@dropill.com",
       "senha": "responsavel1234",
       "id": "2",
-      "pacientes_id": [1, 2]
+      "paciente": 2
     }
   ]
 }

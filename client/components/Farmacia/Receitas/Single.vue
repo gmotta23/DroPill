@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container" v-if="!receita.inserted">
+  <div class="card-container">
     <div class="titulo">
       Receita
     </div>
@@ -24,11 +24,16 @@
     <div class="paciente-id text">
       ID: {{receita.uuid}}
     </div>
-    <div class="gerar-dropill">
+    <div class="gerar-dropill" v-if="!receita.inserted">
       <div class="button" @click.prevent="gerarDroPill">
         Gerar DroPill!
       </div>
     </div>
+    <div class="gerar-dropill" v-else>
+      <div class="button">
+        DroPill inserida!
+      </div>
+    </div>    
   </div>
 </template>
 

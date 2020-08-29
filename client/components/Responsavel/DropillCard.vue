@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container" v-if="id">
+  <div class="card-container">
     <div class="titulo">
       DroPill {{id}} - Reservatórios
     </div>
@@ -10,9 +10,6 @@
         </div>
         <div class="nome-remedio">
           {{reserv.remedio_nome ? `Remédio: ${reserv.remedio_nome}` : 'Vazio'}}
-        </div>
-        <div class="fechar" @click.prevent="deleteReceita(reserv, index)">
-          X
         </div>
       </div>
     </div>
@@ -38,25 +35,10 @@ export default {
 
     this.id = this.dropill.paciente_id
 
-    Object.keys(this.dropill).forEach(key => {
-      if (key.includes('reserv')) {
-        this.reserv_array[this.dropill[`${key}`].dropill_reserv - 1] = this.dropill[`${key}`]
-      }
+    this.dropill.forEach(d => {
+      this.reserv_array[d.dropill_reserv] = d
     })
-  },
-  methods: {
-    async deleteReceita(reserv, index) {
-      try {
-        let d = await axios({
-          method: 'delete',
-          url: `${process.env.SERVER_URL}/medico/dropill/${reserv.uuid}`,
-        })
-        this.reserv_array[index] = {}
-        this.$forceUpdate()
-      } catch (error) {
-        console.log(error)
-      }
-    }
+    console.log(this.reserv_array)
   }
 }
 </script>
@@ -69,6 +51,7 @@ export default {
   padding: 1rem;
   border-radius: .5rem;
   border: 1px black solid;
+  width: 20rem;
 }
 
 .reservs-container {
@@ -80,7 +63,7 @@ export default {
 .reserv {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-columns: 1fr 5fr;
 }
 
 .index-reserv, .fechar {
