@@ -8,3 +8,6 @@ client/.env
 server/node_modules
 server/build
 server/.env
+device/node_modules
+device/build
+device/.env

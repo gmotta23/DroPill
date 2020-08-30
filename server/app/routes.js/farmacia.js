@@ -1,7 +1,6 @@
 import { Router } from 'express'
 import handler from '../database/handler'
 
-
 const router = Router()
 
 router.get('/', (req, res) => {
@@ -41,12 +40,7 @@ router.post('/recarregar', (req, res) => {
     console.log(req.body)
     let new_recarga = req.body
 
-    let db = handler.getDatabase()
-
-    // db.recarga.filter(r => r.remedio.uuid === new_recarga.remedio.uuid)
-
-    console.log(db.recarga, 'recarga antes')
-    console.log(db.receita, 'receita antes')    
+    let db = handler.getDatabase()  
 
     // update recarga
     for (let i in db.recarga) {
