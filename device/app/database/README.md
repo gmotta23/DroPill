@@ -2,8 +2,8 @@
 
 {
   "dropill": {
-    "dropill_id": 2,
-    "paciente_id": 2,
+    "dropill_id": 1,
+    "paciente_id": 1,
     "reservas": [
       {},
       {},

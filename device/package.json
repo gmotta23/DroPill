@@ -9,8 +9,9 @@
     ]
   },
   "scripts": {
-    "build": "rimraf ./build && babel --out-dir ./build app/app.js",
-    "dev": "nodemon --exec babel-node app/app.js"
+    "build": "rimraf ./build && babel --out-dir ./build app/",
+    "dev": "nodemon --exec babel-node app/app.js",
+    "start": "node build/app.js"
   },
   "author": "gmtc",
   "license": "ISC",
