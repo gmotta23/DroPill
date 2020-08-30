@@ -9,8 +9,14 @@
           {{index + 1}}
         </div>
         <div class="nome-remedio">
-          {{reserv.remedio_nome ? `Remédio: ${reserv.remedio_nome}` : 'Vazio'}}
+          {{reserv.inserted ? `Remédio: ${reserv.remedio_nome}` : 'Vazio'}}
         </div>
+        <div class="comprimidos">
+          {{reserv.qtd ? `${reserv.qtd} comprimidos` : 'Vazio'}}
+        </div>
+        <nuxt-link :to="`/responsavel/recarga/?q=${JSON.stringify(reserv)}`" class="recarga" @click.prevent="recarga(reserv)">
+          Solicitar recarga
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -27,7 +33,9 @@ export default {
   data () {
     return {
       reserv_array: [{}, {}, {}, {}, {}],
-      id: ''
+      id: '',
+      isSelected: false,
+      qtd: 0
     }
   },
   beforeMount() {
@@ -36,9 +44,37 @@ export default {
     this.id = this.dropill.paciente_id
 
     this.dropill.forEach(d => {
-      this.reserv_array[d.dropill_reserv] = d
+      this.reserv_array[d.dropill_reserv - 1] = d
     })
-    console.log(this.reserv_array)
+  },
+  methods: {
+    recarga (reserv) {
+
+      try {
+
+        // if (this.isSelected) {
+        //   if (this.qtd < 1) return alert('Insira uma quantidade maior de comprimidos.')
+        //   if (this.qtd > 15) return alert('O reservatório suporta no máximo 15 comprimidos.')
+
+        //   this.receita.qtd = parseInt(this.qtd)
+
+        //   this.receita.inserted = true
+        //   return this.isSelected = false          
+        // }
+
+        // this.isSelected = true
+
+
+        // let c = confirm(`Repor ${reserv.qtd} comprimidos de ${reserv.remedio_nome} ${reserv.remedio_dosagem}?`)
+
+        if (c) {
+          // solicitar para farmacia
+        }
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
   }
 }
 </script>
@@ -51,7 +87,7 @@ export default {
   padding: 1rem;
   border-radius: .5rem;
   border: 1px black solid;
-  width: 20rem;
+  // width: 20rem;
 }
 
 .reservs-container {
@@ -63,10 +99,10 @@ export default {
 .reserv {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 5fr 3fr 3fr;
 }
 
-.index-reserv, .fechar {
+.index-reserv, .comprimidos, .recarga {
   background-color: $color-primary;
   color: white;
   padding: .5rem;
@@ -74,6 +110,10 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+}
+
+.qtd {
+  margin: 1rem 0;
 }
 
 .nome-remedio {
@@ -85,11 +125,13 @@ export default {
   background-color: $color-gray;
 }
 
-.fechar {
-  background-color: red;
-  color: black;
+.recarga {
+  margin-left: 1rem;
+  border-radius: .5rem;
+  background-color: $color-green-primary;
   cursor: pointer;
 }
+
 
 .titulo {
   font-weight: bold;

@@ -24,6 +24,12 @@
     <div class="paciente-id text">
       ID: {{receita.uuid}}
     </div>
+    <div class="qtd" v-if="isSelected">
+      <label class="text">
+        Quantos comprimidos?
+      </label>
+      <input type="number" v-model="qtd">
+    </div>
     <div class="gerar-dropill" v-if="!receita.inserted">
       <div class="button" @click.prevent="gerarDroPill">
         Gerar DroPill!
@@ -45,17 +51,33 @@ export default {
   props: {
     receita: {required: true}
   },
+  data () {
+    return {
+      isSelected: false,
+      qtd: 0
+    }
+  },
   methods: {
     async gerarDroPill () {
       try {
-        
-        let response = await axios({
-          method: 'post',
-          url: `${process.env.SERVER_URL}/farmacia/newDrop`,
-          data: this.receita
-        })
 
-        this.receita.inserted = true
+        if (this.isSelected) {
+          if (this.qtd < 1) return alert('Insira uma quantidade maior de comprimidos.')
+          if (this.qtd > 15) return alert('O reservatório suporta no máximo 15 comprimidos.')
+
+          this.receita.qtd = parseInt(this.qtd)
+
+          let response = await axios({
+            method: 'post',
+            url: `${process.env.SERVER_URL}/farmacia/newDrop`,
+            data: this.receita
+          })
+
+          this.receita.inserted = true
+          return this.isSelected = false
+        }
+
+        this.isSelected = true
 
       } catch (error) {
         console.log(error)
@@ -80,6 +102,10 @@ export default {
 }
 
 .text {
+  margin: 1rem 0;
+}
+
+.qtd {
   margin: 1rem 0;
 }
 

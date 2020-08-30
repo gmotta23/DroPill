@@ -26,6 +26,16 @@ router.get('/receitas', (req, res) => {
   }
 })
 
+router.get('/recargas', (req, res) => {
+  try {
+    let recargas = handler.getDatabase().recarga
+
+    res.send(recargas)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 router.post('/newDrop', (req, res) => {
   try {
 
@@ -36,6 +46,7 @@ router.post('/newDrop', (req, res) => {
     database.receita.map(receita => {
       if (receita.uuid === new_drop.uuid) {
         receita.inserted = true
+        receita.qtd = new_drop.qtd
       }
     })
 

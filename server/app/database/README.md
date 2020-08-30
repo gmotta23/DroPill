@@ -81,6 +81,7 @@ Modelo inicial:
     }
   ],
   "receita": [],
+  "recarga": [],
   "farmacia": [
     {
       "nome": "farmacia_exemplo",

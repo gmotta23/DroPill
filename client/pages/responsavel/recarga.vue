@@ -3,70 +3,24 @@
     <Header />
     <div class="page-content">
       <h1 class="title-container">
-        Receita
+        Reposição
       </h1>
-      <h2 class="title-container">Crie aqui sua receita</h2>
-      <form action="" class="form">
+      <h2 class="title-container">
+        Faça aqui sua reposição
+      </h2>
+      <form class="form">
         <div class="forms-container">
           <div class="input-container">
-            <label for="paciente">
-              Nome do paciente + ID
+            <label for="qtd">
+              Quantidade de comprimidos a serem adicionados
             </label>
-            <select name="paciente" id="paciente" v-model="receita.paciente_id">
-              <option :value="paciente.id" v-for="paciente in pacientes" :key="paciente.id">
-                ID: {{paciente.id}} - {{paciente.nome}}
-              </option>
-            </select>
+            <input type="number" name="qtd" v-model="qtd">
           </div>
         </div>
-        <div class="forms-container">
-          <div class="input-container">
-            <label for="nome_remedio">
-              Nome do remédio
-            </label>
-            <input type="text" name="nome_remedio" v-model="receita.remedio_nome">
-          </div>
-        </div>
-        <div class="forms-container">
-          <div class="input-container">
-            <label for="remedio_dosagem">
-              Dosagem do remédio
-            </label>
-            <input type="text" name="remedio_dosagem" v-model="receita.remedio_dosagem">
-          </div>
-        </div>      
-        <div class="forms-container">
-          <div class="input-container">
-            <label for="remedio_horario">
-              Horário para tomar
-            </label>
-            <input type="text" name="remedio_horario" v-model="receita.remedio_horario">
-          </div>
-        </div>
-        <div class="forms-container">
-          <div class="input-container">
-            <label for="dias">
-              Por quantos dias
-            </label>
-            <input type="number" timezone="" name="dias" v-model="receita.dias">
-          </div>
-        </div>
-        <div class="forms-container">
-          <div class="input-container">
-            <label for="reserv">
-              Qual reservatório da DroPill
-            </label>
-            <select name="reserv" id="reserv" v-model="receita.dropill_reserv">
-              <option :value="reserv" v-for="reserv in 5" :key="reserv">
-                Reservatório {{reserv}}
-              </option>
-            </select>
-          </div>
-        </div>        
-        <div class="button" @click.prevent="novaReceita(receita)">
-          Gerar receita
-        </div>         
       </form>
+      <div class="button" @click.prevent="recarga">
+        Enviar
+      </div>
       <div class="imagem">
       </div> 
     </div>
@@ -79,47 +33,41 @@ import Header from '@/components/Header.vue'
 import axios from 'axios'
 
 export default {
-  data () {
-    return {
-      pacientes: [],
-      receita: {
-        paciente_id: undefined,
-        remedio_nome: undefined,
-        remedio_dosagem: undefined,
-        remedio_horario: undefined,
-        dias: undefined,
-        dropill_reserv: undefined
+  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+    try {
+      let remedio = JSON.parse(query.q)
+      console.log(remedio)
+      return {
+        remedio: remedio
       }
+    } catch (error) {
+      console.log(error)
     }
   },
-  async beforeMount() {
-    try {
-
-      let {data} = await axios({
-        method: 'get',
-        url: `${process.env.SERVER_URL}/paciente/getAll`
-      })
-
-      this.pacientes = data
-
-    } catch (error) {
-      
+  data () {
+    return {
+      qtd: 0
     }
-
   },
   components: {
     Header
   },
   methods: {
-    async novaReceita () {
+    async recarga () {
 
       try {
-        if (Object.values(this.receita).indexOf(undefined) != -1) return alert('Preencha os campos corretamente.')
+        if (this.qtd < 1) return alert('Insira uma quantidade maior de comprimidos.')
+        if (this.qtd > 15) return alert('O reservatório suporta no máximo 15 comprimidos.')
 
-        let response = await axios({
+        let payload = {
+          remedio: this.remedio,
+          new_qtd: this.qtd
+        }
+
+        await axios({
           method: 'post',
-          url: `${process.env.SERVER_URL}/medico/receita/nova`,
-          data: this.receita
+          url: `${process.env.SERVER_URL}/responsavel/recarga`,
+          data: payload
         })
 
       } catch (error) {

@@ -28,6 +28,13 @@
     "_name": "_1d0cb8fb"
   },
   {
+    "name": "farmacia-reposicao",
+    "path": "/farmacia/reposicao",
+    "component": "/home/gustavo/projetos/dropill/client/pages/farmacia/reposicao.vue",
+    "chunkName": "pages/farmacia/reposicao",
+    "_name": "_6d336d58"
+  },
+  {
     "name": "medico-dropill",
     "path": "/medico/dropill",
     "component": "/home/gustavo/projetos/dropill/client/pages/medico/dropill.vue",

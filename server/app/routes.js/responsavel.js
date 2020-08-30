@@ -12,9 +12,6 @@ router.get('/:responsavel_id', (req, res) => {
 
     let {responsavel_id} = req.params
 
-    // get paciente_id com responsavel_id
-    // get dropill com id do paciente
-
     let db = handler.getDatabase()
 
     let paciente = db.paciente.filter(p => p.responsavel_id === parseInt(responsavel_id))
@@ -30,6 +27,20 @@ router.get('/:responsavel_id', (req, res) => {
   } catch (error) {
     
   }
+})
+
+router.put('/recarga', (req, res) => {
+  try {
+    console.log(req.body)
+
+    res.send('ok')
+  } catch (error) {
+    
+  }
+  // repo_request
+  // receita
+  // qtd
+  // farmacia_id
 })
 
 router.get('/getAll', async (req, res) => {
