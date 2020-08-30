@@ -5,9 +5,12 @@ client/node_modules
 client/.nuxt
 client/dist
 client/.env
+client/package-lock.json
 server/node_modules
 server/build
 server/.env
+server/package-lock.json
 device/node_modules
 device/build
 device/.env
+device/package-lock.json
