@@ -14,7 +14,7 @@
         <div class="comprimidos">
           {{reserv.qtd ? `${reserv.qtd} comprimidos` : 'Vazio'}}
         </div>
-        <nuxt-link :to="`/responsavel/recarga/?q=${JSON.stringify(reserv)}`" class="recarga" @click.prevent="recarga(reserv)">
+        <nuxt-link :to="`/responsavel/recarga/?q=${JSON.stringify(reserv)}`" class="recarga" v-if="reserv.remedio_nome">
           Solicitar recarga
         </nuxt-link>
       </div>
@@ -48,33 +48,7 @@ export default {
     })
   },
   methods: {
-    recarga (reserv) {
 
-      try {
-
-        // if (this.isSelected) {
-        //   if (this.qtd < 1) return alert('Insira uma quantidade maior de comprimidos.')
-        //   if (this.qtd > 15) return alert('O reservatório suporta no máximo 15 comprimidos.')
-
-        //   this.receita.qtd = parseInt(this.qtd)
-
-        //   this.receita.inserted = true
-        //   return this.isSelected = false          
-        // }
-
-        // this.isSelected = true
-
-
-        // let c = confirm(`Repor ${reserv.qtd} comprimidos de ${reserv.remedio_nome} ${reserv.remedio_dosagem}?`)
-
-        if (c) {
-          // solicitar para farmacia
-        }
-      } catch (error) {
-        console.log(error)
-      }
-
-    }
   }
 }
 </script>

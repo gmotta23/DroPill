@@ -36,6 +36,43 @@ router.get('/recargas', (req, res) => {
   }
 })
 
+router.post('/recarregar', (req, res) => {
+  try {
+    console.log(req.body)
+    let new_recarga = req.body
+
+    let db = handler.getDatabase()
+
+    // db.recarga.filter(r => r.remedio.uuid === new_recarga.remedio.uuid)
+
+    console.log(db.recarga, 'recarga antes')
+    console.log(db.receita, 'receita antes')    
+
+    // update recarga
+    for (let i in db.recarga) {
+      let existing_recarga = db.recarga[i]
+      if (existing_recarga.remedio.uuid === new_recarga.remedio.uuid) {
+        existing_recarga.inserted = true
+      }
+    }
+
+    // update receita
+    for (let i in db.receita) {
+      let existing_receita = db.receita[i]
+      if (existing_receita.uuid === new_recarga.remedio.uuid) {
+        existing_receita.qtd = parseInt(new_recarga.new_qtd)
+      }
+    }
+
+    handler.saveDatabase(db)
+
+    res.send('ok')
+    
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 router.post('/newDrop', (req, res) => {
   try {
 

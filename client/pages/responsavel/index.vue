@@ -6,9 +6,6 @@
         Bem vindo responsável!
       </h1>
       <small class="subtext">Paciente ID: {{paciente_id}}</small>
-      <nuxt-link to="/responsavel/recarga" class="button">
-        Solicitar recarga de remédio
-      </nuxt-link>
       <DropillCard class="card" :dropill="dropill" />
     </div>
   </div>

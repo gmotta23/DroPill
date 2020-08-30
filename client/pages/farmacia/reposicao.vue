@@ -2,8 +2,8 @@
   <div class="container">
     <Header />
     <div class="page-content">
-      <h1>Bem vindo! Farmácia {{nome}}</h1>
-      <Receitas :receitas="receitas" />
+      <h1>Pedidos de Reposição - Farmácia {{nome}}</h1>
+      <Recargas :recargas="recargas" />
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
 <script>
 
 import Header from '@/components/Header.vue'
-import Receitas from '@/components/Farmacia/Receitas/Gallery'
+import Recargas from '@/components/Farmacia/Recargas/Gallery'
 import cookies from '@/mixins/cookies'
 
 import axios from 'axios'
@@ -19,7 +19,7 @@ import axios from 'axios'
 export default {
   components: {
     Header,
-    Receitas
+    Recargas
   },
   async asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
     try {
@@ -30,11 +30,11 @@ export default {
 
       let {data} = await axios({
         method: 'get',
-        url: `${process.env.SERVER_URL}/farmacia/receitas`
+        url: `${process.env.SERVER_URL}/farmacia/recargas`
       })
 
       return {
-        receitas: data.reverse(),
+        recargas: data.reverse(),
         nome: nome
       }
 

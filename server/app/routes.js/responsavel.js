@@ -31,11 +31,18 @@ router.get('/:responsavel_id', (req, res) => {
 
 router.put('/recarga', (req, res) => {
   try {
-    console.log(req.body)
+    let recarga = req.body
+    let db = handler.getDatabase()
 
-    res.send('ok')
+    if (db.recarga.map(r => r.remedio.uuid).indexOf(recarga.remedio.uuid) === -1) {
+      recarga.inserted = false
+      db.recarga.push(recarga)
+      handler.saveDatabase(db)
+    }
+
+    res.status(200).send('Sucesso!')
   } catch (error) {
-    
+    console.log(error)
   }
   // repo_request
   // receita

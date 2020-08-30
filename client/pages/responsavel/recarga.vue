@@ -65,7 +65,7 @@ export default {
         }
 
         await axios({
-          method: 'post',
+          method: 'put',
           url: `${process.env.SERVER_URL}/responsavel/recarga`,
           data: payload
         })
