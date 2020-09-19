@@ -28,7 +28,7 @@ router.patch('/update', (req, res) => {
 
     res.send(new_receitas)
   } catch (error) {
-    
+    console.log(error)
   }
 })
 

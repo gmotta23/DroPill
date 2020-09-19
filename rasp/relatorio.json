@@ -1,0 +1,258 @@
+{
+  "11/09/2020 14:31:15": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 0,
+      "status": 1
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 0,
+      "status": 1
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ],
+  "11/09/2020 14:31:22": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 1,
+      "status": 2
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 2,
+      "status": 2
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ],
+  "11/09/2020 14:31:24": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 1,
+      "status": 0
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 2,
+      "status": 0
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ],
+  "11/09/2020 14:32:01": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 1,
+      "status": 0
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 2,
+      "status": 0
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ],
+  "11/09/2020 14:32:15": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 0,
+      "status": 1
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 0,
+      "status": 1
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ],
+  "11/09/2020 14:32:31": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 1,
+      "status": 2
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 2,
+      "status": 2
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ],
+  "11/09/2020 14:36:06": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 1,
+      "status": 0
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 2,
+      "status": 0
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ],
+  "11/09/2020 14:36:31": [
+    {
+      "remedio": "remedio 0",
+      "tempo": "0m0s",
+      "n_comprimidos": 0,
+      "status": 1
+    },
+    {
+      "remedio": "remedio 1",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 2",
+      "tempo": "0m0s",
+      "n_comprimidos": 0,
+      "status": 1
+    },
+    {
+      "remedio": "remedio 3",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    },
+    {
+      "remedio": "remedio 4",
+      "tempo": "",
+      "n_comprimidos": -1,
+      "status": -1
+    }
+  ]
+}

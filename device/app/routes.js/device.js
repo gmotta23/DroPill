@@ -43,10 +43,18 @@ router.patch('/status', async (req, res) => {
 
 // atualizar o server a partir do device
 
+// acessar a rota toda vez que ocorrer um update no data.json no py
+
 router.get('/update', async (req, res) => {
   try {
 
+    let internal_dp = require('../../../rasp/data.json')
+
     let dp = handler.getDatabase().dropill
+
+    // mescla do db que contém o id da dropill com o banco atualizado
+
+    dp.reservas = internal_dp.receita
 
     await axios({
       method: 'patch',
