@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import handler from '../database/handler'
 import axios from 'axios'
+const fs = require('fs')
 
 const router = Router()
 
@@ -13,6 +14,19 @@ router.get('/status', (req, res) => {
     let dp = handler.getDatabase().reservas
 
     res.send(dp)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+router.get('/relatorio', (req, res) => {
+  try {
+
+    let relatorio = JSON.parse(fs.readFileSync('../rasp/relatorio.json', 'utf8'))
+
+    res.send(relatorio)
+
+    relatorio = {}
   } catch (error) {
     console.log(error)
   }

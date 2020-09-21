@@ -5,7 +5,12 @@
       <h1 class="title-container">
         Bem vindo responsável!
       </h1>
-      <small class="subtext">Paciente ID: {{paciente_id}}</small>
+      <div class="info-container">
+        <small class="subtext">Paciente ID: {{paciente_id}}</small>
+        <nuxt-link to="/responsavel/relatorio" class="button">
+          Ver relatório
+        </nuxt-link>
+      </div>
       <DropillCard class="card" :dropill="dropill" />
     </div>
   </div>
@@ -68,6 +73,10 @@ export default {
   margin-top: 2rem;
   padding: 1rem;
   // text-align: center;
+}
+
+.info-container {
+  display: flex;
 }
 
 .subtext {
