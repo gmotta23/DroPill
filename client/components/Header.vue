@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <nuxt-link to="/" class="logo-container">
-
+      <img src="/img/logotipo.png" alt="" class="src">
     </nuxt-link>
     <div class="buttons-container">
       <nuxt-link to="/sobre" class="button">
@@ -61,12 +61,11 @@ export default {
 }
 
 .logo-container {
-  background: url('/img/logotipo.png');
-  height: 90%;
-  padding: 1rem;
-  width: 5rem;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  height: 100%;
+  width: auto;
+  img {
+    height: 100%;
+  }
 }
 
 .buttons-container {
@@ -74,6 +73,11 @@ export default {
   .button {
     margin: 0 1rem;
     cursor: pointer;
+    border: none;
+    border-radius: 3rem;
+    padding: 0.5rem 1rem;
+    background-color: $color-secondary-blue;
+    color: black;
   }
 }
 

@@ -95,6 +95,7 @@ export default {
   padding: 1rem;
   border-radius: .5rem;
   border: 1px black solid;
+  background-color: white;
 }
 
 .titulo {
@@ -112,6 +113,7 @@ export default {
 .gerar-dropill {
   .button {
     @include mixin-button;
+    color: black;
   }
 }
 

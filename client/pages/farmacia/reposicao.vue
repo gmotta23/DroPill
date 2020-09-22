@@ -2,7 +2,7 @@
   <div class="container">
     <Header />
     <div class="page-content">
-      <h1>Pedidos de Reposição - Farmácia {{nome}}</h1>
+      <h1 class="title-container">Pedidos de Reposição - Farmácia {{nome}}</h1>
       <Recargas :recargas="recargas" />
     </div>
   </div>
@@ -47,8 +47,20 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '@/assets/scss/index.scss';
+
 .page-content {
-  padding-top: 4rem;
+  padding-top: 6rem;
+}
+
+.title-container {
+  background-color: $color-secondary-blue;
+  width: max-content;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0 1rem 1rem 0;
+  border: 1px black solid;
+  box-shadow: 5px 5px 10px 5px #cccccc;
 }
 
 h1 {

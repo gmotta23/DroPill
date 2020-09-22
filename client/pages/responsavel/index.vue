@@ -6,7 +6,7 @@
         Bem vindo responsável!
       </h1>
       <div class="info-container">
-        <small class="subtext">Paciente ID: {{paciente_id}}</small>
+        <div class="subtext">Paciente ID: {{paciente_id}}</div>
         <nuxt-link to="/responsavel/relatorio" class="button">
           Ver relatório
         </nuxt-link>
@@ -61,22 +61,25 @@ export default {
 }
 
 .page-content {
-  padding-top: 4rem;
+  padding-top: 6rem;
   display: flex;
-  padding-left: 1rem;
-  // align-items: center;
   flex-flow: column;
 }
 
 .title-container {
-  // width: 25vw;
-  margin-top: 2rem;
-  padding: 1rem;
-  // text-align: center;
+  background-color: $color-secondary-blue;
+  width: 40%;
+  padding: 2rem 0;
+  text-align: center;
+  border-radius: 0 1rem 1rem 0;
+  border: 1px black solid;
+  box-shadow: 5px 5px 10px 5px #cccccc;
 }
 
 .info-container {
   display: flex;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .subtext {
@@ -90,8 +93,8 @@ export default {
 }
 
 .card {
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin: 1rem;
+  background-color: white;
 }
 
 </style>

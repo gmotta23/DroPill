@@ -58,11 +58,18 @@ export default {
 
 h1 {
   padding: 1rem;
+  text-align: center;
 }
 
 .button {
   @include mixin-button;
   width: max-content;
-  margin-left: 1rem;
+  margin: 1rem 0 1rem 10rem;
+  color: black;
+  padding: 1rem 5rem;
+  background-color: $color-secondary-blue;
+  border: 1px black solid;
+  box-shadow: 5px 5px 5px 3px #cccccc;
+  border-radius: 1rem;
 }
 </style>

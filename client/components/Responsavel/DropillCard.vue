@@ -101,8 +101,9 @@ export default {
 
 .recarga {
   margin-left: 1rem;
-  border-radius: .5rem;
-  background-color: $color-green-primary;
+  border-radius: 2rem;
+  background-color: $color-terciary-blue;
+  color: black;
   cursor: pointer;
 }
 

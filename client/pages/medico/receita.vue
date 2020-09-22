@@ -5,8 +5,7 @@
       <h1 class="title-container">
         Receita
       </h1>
-      <h2 class="title-container">Crie aqui sua receita</h2>
-      <form action="" class="form">
+      <form class="form">
         <div class="forms-container">
           <div class="input-container">
             <label for="paciente">
@@ -67,8 +66,6 @@
           Gerar receita
         </div>         
       </form>
-      <div class="imagem">
-      </div> 
     </div>
   </div>
 </template>
@@ -140,25 +137,29 @@ export default {
 }
 
 .page-content {
-  padding-top: 4rem;
+  padding-top: 6rem;
   display: flex;
-  align-items: center;
-  padding: 4rem 5rem 0 5rem;
   flex-flow: column;
 }
 
 .title-container {
-  // margin-top: 2rem;
-  text-align: left;
-  width: 80%;
-  padding: .5rem 1rem;
-  // padding: 1rem;
-  // text-align: center;
+  background-color: $color-secondary-blue;
+  width: 40%;
+  padding: 2rem 0;
+  text-align: center;
+  border-radius: 0 1rem 1rem 0;
+  border: 1px black solid;
+  box-shadow: 5px 5px 10px 5px #cccccc;
 }
 
 form {
   width: 80%;
+  margin-top: 2rem;
   padding: 1rem;
+  align-self: center;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px $color-secondary-blue solid;
 }
 
 .forms-container {
@@ -172,14 +173,12 @@ form {
 
 .button {
   @include mixin-button;
-}
-
-.imagem {
-  width: 100vw;
-  height: 20rem;
-  background: url('/img/dp-tech.png');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  width: 30%;
+  margin: auto;
+  color: black;
+  background-color: $color-terciary-blue;
+  border-radius: 2rem;
+  font-size: 1.4rem;
 }
 
 </style>
